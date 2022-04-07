@@ -3,7 +3,7 @@ from pathlib import Path
 import json
 
 META_FILE_NAME = "metadata.json"
-OUTPUT_FOLDER = "./output/"
+OUTPUT_FOLDER = "./output-no-aug/"
 
 
 def read_json(path):
@@ -77,7 +77,7 @@ for img in meta_data["images"]:
 cur_img_index = counter
 
 # Combine, move forward with image_id
-for i in range(1, NUM_OF_INPUTS):
+for i in range(0, NUM_OF_INPUTS):
     image_names = []
 
     input_meta_data = read_json(f"{get_input_path(i)}{META_FILE_NAME}")
